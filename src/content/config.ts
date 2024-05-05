@@ -1,4 +1,4 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection, z } from 'astro:content'
 
 export const collections = {
 	work: defineCollection({
@@ -11,4 +11,4 @@ export const collections = {
 			img_alt: z.string().optional(),
 		}),
 	}),
-};
+}
