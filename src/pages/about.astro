@@ -5,10 +5,10 @@ import Link from '../components/ui/link.astro'
 import Icon from '../components/ui/Icon.astro'
 ---
 
-<BaseLayout title="About | Stefan Gogov" description="About Stefan Gogov">
+<BaseLayout title="About | Ahad Chowdhury" description="About Ahad Chowdhury">
 	<div class="stack gap-20">
 		<header class="wrapper hero">
-			<Hero align="center" title="About мe" tagline="A Glimpse into My Life" />
+			<Hero align="center" title="About me" tagline="A glimpse into my life" />
 			<img alt="illustration of profile page" src="/assets/illustrations/about.svg" />
 		</header>
 
@@ -17,20 +17,102 @@ import Icon from '../components/ui/Icon.astro'
 				<h2 class="section-title">Background</h2>
 				<div class="content">
 					<p>
-						Hi there, 👋 I'm Stefan Gogov, a computer science student from Bulgaria. I'm really passionate
-						about programming, and I love learning new things all the time. Solving challenging problems and
-						creating cool software solutions really excites me!
+						I am Ahad Chowdhury, originally from Dhaka 🇧🇩 — currently living in Sydney 🇦🇺 — a student of
+						Master of Data Science at
+						<Link external href="https://spi.nsw.edu.au"> Sydney Polytechnic Institute </Link>.
+					</p>
+					<p>At present, I am…</p>
+					<ul>
+						<li>
+							👨🏽‍💻 Working on
+							<Link external href="https://github.com/maacpiash/uds-dotnet-bun">
+								<code>uds-dotnet-bun</code></Link
+							>
+							and
+							<Link external href="https://github.com/maacpiash/uds-dotnet-bun">
+								<code>minimal-api-jwt-auth</code></Link
+							>
+							.
+						</li>
+						<li>
+							📖 Reading
+							<Link
+								external
+								href="https://en.wikipedia.org/wiki/23_Things_They_Don't_Tell_You_About_Capitalism"
+							>
+								23 Things They Don't Tell You About Capitalism by Ha-Joon Chang</Link
+							>.
+						</li>
+						<li>
+							💭 Learning about domain driven design, vertical slices architecture, and clean
+							architecture.
+						</li>
+					</ul>
+					<p>
+						I also like to contribute to open source projects with code and documentation, such as
+						<Link external href="https://github.com/sandoche/Darkmode.js/pull/9">Darkmode.js</Link>,
+						<Link external href="https://github.com/ubuntu-mate/ubuntu-mate.org/pull/141"
+							>Ubuntu MATE docs</Link
+						>, and
+						<Link external href="https://github.com/howtocode-dev/git.howtocode.dev/pull/21"
+							>git.howtocode.dev</Link
+						>.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Work Experience</h2>
+				<div class="content">
+					<p>
+						<strong>🖥️ Apr 2021 - Jul 2022</strong>: Worked part-time as a <strong>Software Engineer</strong
+						> at <Link external href="https://www.apollointl.com.au"
+							><strong>Apollo International</strong></Link
+						>, Sydney, Australia. Developed a CRM software, to be used by the staff members of the company,
+						from scratch. Developed the frontend using <Link
+							external
+							href="https://github.com/vercel/next.js">Next.js</Link
+						>, backend (including a user authentication and authorization system) using <Link
+							external
+							href="https://github.com/dotnet/aspnetcore">ASP.NET Core</Link
+						>, with <Link external href="https://github.com/postgres/postgres">PostgreSQL</Link> as database
+						(with
+						<Link external href="https://github.com/dotnet/efcore">Entity Framework Core</Link> as ORM) and <Link
+							external
+							href="https://github.com/redis/redis">Redis</Link
+						> for in-memory storage.
 					</p>
 					<p>
-						Besides programming, I'm also super enthusiastic about open-source projects. I enjoy
-						contributing to them because it allows me to give back to the community, work with like-minded
-						folks, and improve my skills. Outside of the tech world, I have a hobby in photography. I love
-						capturing the beauty of the world through my lens and preserving those special moments.
+						<strong>🏢 Feb 2019 - Jan 2020</strong>: Worked full-time as a <strong
+							>Junior Software Engineer</strong
+						> at <Link external href="https://dsinnovators.com"
+							><strong>Dynamic Solution Innovators Ltd.</strong></Link
+						>, Dhaka. Projects I worked on are the <Link
+							external
+							href="https://www.dsinnovators.com/projects/opencrvs">OpenCRVS</Link
+						> project (
+						<Link external href="https://github.com/opencrvs/opencrvs-core/commits?author=maacpiash">
+							my commits
+						</Link>
+						) and the <Link external href="https://www.dsinnovators.com/projects/olwel"
+							>enterprise solution</Link
+						> of
+						<Link external href="https://olwel.com">Olwel</Link>. Both are full-stack web applications
+						developed with <Link external href="https://github.com/facebook/react">React</Link> and <Link
+							external
+							href="https://github.com/hapijs/hapi">Hapi</Link
+						>
 					</p>
 					<p>
-						I'm truly thrilled to be on this journey of exploration and growth. I'm always seeking new
-						opportunities to expand my abilities and make a positive impact through technology. Thanks for
-						getting to know a bit about me! 😊
+						<strong>💻 Nov 2016 - Apr 2018</strong>: Worked part-time as a <strong
+							>Research Assistant</strong
+						> at <Link external href="https://www.northsouth.edu/academic/shls/esm/"
+							><strong>DESM, North South University</strong></Link
+						>, Dhaka, Bangladesh, on a research project (<Link
+							external
+							href="http://www.ipsnews.net/2017/05/flying-green-in-bangladesh/"
+							>relevant news article</Link
+						>). Used <Link external href="https://github.com/dotnet/winforms">Windows Forms</Link> to develop
+						the client-side software of <em>NODES</em>, an airline management system.
 					</p>
 				</div>
 			</section>
@@ -38,15 +120,23 @@ import Icon from '../components/ui/Icon.astro'
 				<h2 class="section-title">Education</h2>
 				<div class="content">
 					<p>
-						🎓 Plovdiv University "Paisii Hilendarski" (2022 - Present) in Software technologies and design
+						<strong>🎒 Jan 2014 - Aug 2018</strong>: Studied <strong>
+							Computer Science and Engineering
+						</strong>
+						at <Link external href="https://www.northsouth.edu">
+							<strong> North South University </strong>
+						</Link>
+						, Dhaka, Bangladesh and got a <strong>Bachelor of Science</strong> degree.
 					</p>
-					<p>🎓 St. St Cyril and Metodiy High School Asenovgrad (2017 - 2022)</p>
 				</div>
 			</section>
 			<section>
 				<h2 class="section-title">Skills</h2>
 				<div class="content">
-					<p>JavaScript, TypeScript, React, NodeJS, GraphQL, SQL, C#</p>
+					<p>
+						C#, JavaScript/TypeScript, Python, ASP.NET Core, Node.js, React.js, SQL, Docker,
+						Keras/Tensorflow, PaaS, IaaS.
+					</p>
 				</div>
 			</section>
 			<section>
@@ -102,6 +192,10 @@ import Icon from '../components/ui/Icon.astro'
 		grid-column: 2 / 4;
 
 		p:not(:last-child) {
+			margin-bottom: 1rem;
+		}
+
+		ul {
 			margin-bottom: 1rem;
 		}
 	}
