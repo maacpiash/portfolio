@@ -1,16 +1,19 @@
+🙏🏽 Huge thanks to [Stefan Gogov](https://github.com/stekatag), the original creator of this project, for keeping it under GPLv3 licence, allowing me to copy, modify, and deploy the project for myself.
+
+The original readme content follows.
+
 # Portfolio Website using Astro Starter Kit
 
 [![Astro](https://img.shields.io/badge/built%20with-astro-blueviolet)](https://astro.build/)
 [![License](https://img.shields.io/badge/license-GPLv3-blue)](LICENSE)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/d865a500-5fd3-4be4-a3c1-12a85cc65713/deploy-status)](https://app.netlify.com/sites/stekatag-portfolio/deploys)
 
 ## About the Project
 
 This is a portfolio website built using [Astro](https://astro.build/), a static site generator that delivers lightning-fast performance and embraces the JAMstack philosophy. The blog is built using the Astro starter kit
 
-## [Live Demo](https://sgogov.dev/)
+<!-- ## [Live Demo](https://sgogov.dev/) -->
 
-![portfolio-demo-img](public/demo-img.jpg)
+<!-- ![portfolio-demo-img](public/demo-img.jpg) -->
 
 ## Pages
 
