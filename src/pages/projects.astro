@@ -5,6 +5,8 @@ import Icon from '../components/ui/Icon.astro'
 import Hero from '../components/Hero.astro'
 import RepoCard from '../components/RepoCard.astro'
 
+import repos from '../content/projects.json'
+
 type PinnedRepos = {
 	owner: string
 	repo: string
@@ -16,9 +18,6 @@ type PinnedRepos = {
 	stars: number
 	forks: number
 }
-
-const pinnedRepos = await fetch('https://gh-pinned-repos-tsj7ta5xfhep.deno.dev/?username=stekatag')
-const repos = await pinnedRepos.json()
 ---
 
 <BaseLayout title="Projects | Stefan Gogov" description="Learn about Stefan Gogov's most recent projects">
