@@ -1,0 +1,71 @@
+[
+    {
+        "owner": "maacpiash",
+        "repo": "KonSchool",
+        "link": "https://github.com/maacpiash/KonSchool",
+        "description": "🏫 🇧🇩 Fuzzy-AHP-based recommendation system for secondary schools in Bangladesh",
+        "image": "https://opengraph.githubassets.com/1/maacpiash/KonSchool",
+        "website": "https://konschool.azurewebsites.net",
+        "language": "C#",
+        "languageColor": "#178600",
+        "stars": 18,
+        "forks": 6
+    },
+    {
+        "owner": "maacpiash",
+        "repo": "nextjs-template",
+        "link": "https://github.com/maacpiash/nextjs-template",
+        "description": "A bit personalized version of the `with-typescript-eslint-jest` template.",
+        "image": "https://opengraph.githubassets.com/1/maacpiash/nextjs-template",
+        "language": "TypeScript",
+        "languageColor": "#3178c6",
+        "stars": 21,
+        "forks": 2
+    },
+    {
+        "owner": "maacpiash",
+        "repo": "minimal-api-jwt-auth",
+        "link": "https://github.com/maacpiash/minimal-api-jwt-auth",
+        "description": "🔐 🛂 ASP.NET 6 and 7 minimal API with JWT authentication and authorization",
+        "image": "https://opengraph.githubassets.com/1/maacpiash/minimal-api-jwt-auth",
+        "language": "C#",
+        "languageColor": "#178600",
+        "stars": 33,
+        "forks": 7
+    },
+    {
+        "owner": "maacpiash",
+        "repo": "Connery",
+        "link": "https://github.com/maacpiash/Connery",
+        "description": "🍎 🧠 Fruit Image Classifier Using Convolutional Neural Networks",
+        "image": "https://opengraph.githubassets.com/1/maacpiash/Connery",
+        "website": "https://connery-api.herokuapp.com/",
+        "language": "C#",
+        "languageColor": "#178600",
+        "stars": 5,
+        "forks": 2
+    },
+    {
+        "owner": "maacpiash",
+        "repo": "vardict",
+        "link": "https://github.com/maacpiash/vardict",
+        "description": "🖥 💬 Get a dictionary consisting of CLI arguments",
+        "image": "https://opengraph.githubassets.com/1/maacpiash/vardict",
+        "website": "https://www.npmjs.com/package/vardict",
+        "language": "TypeScript",
+        "languageColor": "#3178c6",
+        "stars": 2,
+        "forks": 1
+    },
+    {
+        "owner": "maacpiash",
+        "repo": "Winston",
+        "link": "https://github.com/maacpiash/Winston",
+        "description": "Neural networks from scratch",
+        "image": "https://opengraph.githubassets.com/1/maacpiash/Winston",
+        "language": "C",
+        "languageColor": "#555555",
+        "stars": 1,
+        "forks": 0
+    }
+]
