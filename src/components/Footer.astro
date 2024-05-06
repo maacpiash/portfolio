@@ -1,7 +1,6 @@
 ---
 import Icon from './ui/Icon.astro'
 import Link from './ui/link.astro'
-const currentYear = new Date().getFullYear()
 ---
 
 <footer>
@@ -10,13 +9,9 @@ const currentYear = new Date().getFullYear()
 			Built with <Link class="link" href="https://astro.build/" external> Astro </Link>
 			<Icon icon="rocket-launch" size="1.2em" />
 		</p>
-		<p>&copy; {currentYear} Stefan Gogov</p>
 	</div>
 	<p class="socials">
-		<Link class="link" href="https://github.com/stekatag" external>Github</Link>
-		<Link class="link" href="https://codingly.netlify.app/" external>Blog</Link>
-		<Link class="link" href="https://sgogov.com/" external> Photography Portfolio </Link>
-		<Link class="link" href="https://www.linkedin.com/in/stefan-gogov/" external> LinkedIn </Link>
+		<Link class="link" href="https://github.com/maacpiash/portfolio" external>Source code</Link>
 	</p>
 </footer>
 <style>
