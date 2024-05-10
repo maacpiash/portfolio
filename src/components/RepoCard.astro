@@ -1,7 +1,7 @@
 ---
 import Icon from './ui/Icon.astro'
 
-const { repo, link, description, language, languageColor } = Astro.props
+const { repo, link, description, language, languageColor, stars, forks } = Astro.props
 ---
 
 <a class="repo-card" href={link} title="View repo" target="_blank">
@@ -19,6 +19,16 @@ const { repo, link, description, language, languageColor } = Astro.props
 				backgroundColor: languageColor,
 			}}></span>
 		<span class="repo-card__footer-language">{language}</span>
+		<div>
+			<span>
+				<Icon icon="star" color="var(--accent-regular)" size="1em" gradient />
+				{stars}
+			</span>
+			<span>
+				<Icon icon="fork" color="var(--accent-regular)" size="1em" gradient />
+				{forks}
+			</span>
+		</div>
 	</div>
 </a>
 
@@ -80,6 +90,13 @@ const { repo, link, description, language, languageColor } = Astro.props
 				width: 1.125rem;
 				height: 1.125rem;
 				border-radius: 50%;
+			}
+
+			div:last-child {
+				display: flex;
+				align-items: center;
+				gap: 0.5rem;
+				margin-left: auto;
 			}
 		}
 	}
