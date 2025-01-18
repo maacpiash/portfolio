@@ -3,14 +3,29 @@ interface Props {
 	title: string
 	tagline?: string
 	align?: 'start' | 'center'
+	items?: string[]
 }
 
-const { align = 'center', tagline, title } = Astro.props
+const { align = 'center', tagline, title, items } = Astro.props
 ---
 
 <div class:list={['hero stack gap-4', align]}>
 	<div class="stack gap-2">
-		<h1 class="title">{title}</h1>
+		<h1 class="title">
+			{title}
+			{
+				items && items.length > 0 && (
+					<br/>
+					<span class="animation">
+						<ul>
+							{items.map((item) => (
+								<li>{item}</li>
+							))}
+						</ul>
+					</span>
+				)
+			}
+		</h1>
 		{tagline && <p class="tagline">{tagline}</p>}
 	</div>
 	<slot />
@@ -50,6 +65,41 @@ const { align = 'center', tagline, title } = Astro.props
 
 		.title {
 			font-size: var(--text-5xl);
+		}
+	}
+
+	.animation {
+		vertical-align: sub;
+		height: 1.2em;
+		overflow: hidden;
+		display: inline-block;
+		line-height: 2em;
+	}
+
+	ul {
+		animation: animation 8s forwards;
+		animation-delay: 2s;
+		padding: 0;
+		margin-top: -0.5em;
+		list-style: none;
+	}
+
+	/* TODO: make it dynamic. Now works with `items` of length 5 */
+	@keyframes animation {
+		0% {
+			margin-top: -0.55em;
+		}
+		25% {
+			margin-top: -2.45em;
+		}
+		50% {
+			margin-top: -4.45em;
+		}
+		75% {
+			margin-top: -6.45em;
+		}
+		100% {
+			margin-top: -8.45em;
 		}
 	}
 </style>
