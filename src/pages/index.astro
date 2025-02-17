@@ -6,6 +6,7 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 import Hero from '../components/Hero.astro'
 import Icon from '../components/ui/Icon.astro'
 import Link from '../components/ui/link.astro'
+import headshot from '../assets/ahad.jpg'
 ---
 
 <BaseLayout>
@@ -33,7 +34,7 @@ import Link from '../components/ui/link.astro'
 
 				<div class="avatar-wrapper">
 					<!-- <div class="overlay"></div> -->
-					<img alt="Headshot of Ahad Chowdhury" width="480" height="620" src="/ahad.jpg" />
+					<img alt="Headshot of Ahad Chowdhury" width="480" height="620" src={headshot.src} />
 				</div>
 			</header>
 		</div>
