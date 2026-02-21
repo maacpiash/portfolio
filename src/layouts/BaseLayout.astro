@@ -27,7 +27,20 @@ const { title, description } = Astro.props
 			<slot />
 			<Footer />
 		</div>
-
+		<script is:inline>
+			// Restore theme preference before page is painted during view transitions.
+			function applyTheme(doc = document) {
+				let isDark = false
+				if (typeof localStorage !== 'undefined' && localStorage.getItem('theme'))
+					isDark = localStorage.getItem('theme') === 'dark'
+				else isDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+				doc.documentElement.classList[isDark ? 'add' : 'remove']('theme-dark')
+			}
+			// Run on initial load
+			applyTheme()
+			// Apply theme to incoming document before swap during navigation
+			document.addEventListener('astro:before-swap', (event) => applyTheme(event.newDocument))
+		</script>
 		<script>
 			// Add “loaded” class once the document has completely loaded.
 			addEventListener('load', () => document.documentElement.classList.add('loaded'))
