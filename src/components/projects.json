@@ -26,11 +26,11 @@
         "owner": "maacpiash",
         "repo": "minimal-api-jwt-auth",
         "link": "https://github.com/maacpiash/minimal-api-jwt-auth",
-        "description": "🔐 🛂 ASP.NET 6 and 7 minimal API with JWT authentication and authorization",
+        "description": "🔐 🛂 ASP.NET (versions 10 and 11) minimal API with JWT authentication and authorization",
         "image": "https://opengraph.githubassets.com/1/maacpiash/minimal-api-jwt-auth",
         "language": "C#",
         "languageColor": "#178600",
-        "stars": 34,
+        "stars": 35,
         "forks": 7
     },
     {
