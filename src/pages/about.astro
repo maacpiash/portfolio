@@ -3,6 +3,10 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 import Hero from '../components/Hero.astro'
 import Link from '../components/ui/link.astro'
 import Icon from '../components/ui/Icon.astro'
+
+const featureFlags = {
+	'show-instutites': import.meta.env.PUBLIC_SHOW_INSTUTITES === 'true',
+}
 ---
 
 <BaseLayout title="About | Ahad Chowdhury" description="About Ahad Chowdhury">
@@ -83,8 +87,7 @@ import Icon from '../components/ui/Icon.astro'
 						>, backend (including a user authentication and authorization system) using <Link
 							external
 							href="https://github.com/dotnet/aspnetcore">ASP.NET Core</Link
-						>, with <Link external href="https://github.com/postgres/postgres">PostgreSQL</Link> as database
-						(with
+						>, with <Link external href="https://github.com/postgres/postgres">PostgreSQL</Link> as database (with
 						<Link external href="https://github.com/dotnet/efcore">Entity Framework Core</Link> as ORM) and <Link
 							external
 							href="https://github.com/redis/redis">Redis</Link
@@ -153,19 +156,41 @@ import Icon from '../components/ui/Icon.astro'
 				<div class="content">
 					<p>
 						<strong>📚 Aug 2023 - Sep 2024</strong>: Studied <strong> Data Science </strong>
-						at
-						<Link external href="https://spi.nsw.edu.au"><strong>Sydney Polytechnic Institute</strong></Link
-						>
-						, Sydney, Australia and got a <strong>Master of Data Science</strong> degree.
+						{
+							featureFlags['show-instutites'] ? (
+								<>
+									at{' '}
+									<Link external href="https://spi.nsw.edu.au">
+										<strong>Sydney Polytechnic Institute</strong>
+									</Link>
+									, Sydney, Australia and got a <strong>Master of Data Science</strong> degree.
+								</>
+							) : (
+								<>
+									at Sydney, Australia and got a <strong>Master of Data Science</strong> degree.
+								</>
+							)
+						}
 					</p>
 					<p>
 						<strong>🎒 Jan 2014 - Aug 2018</strong>: Studied <strong>
 							Computer Science and Engineering
 						</strong>
-						at <Link external href="https://www.northsouth.edu">
-							<strong> North South University </strong>
-						</Link>
-						, Dhaka, Bangladesh and got a <strong>Bachelor of Science</strong> degree.
+						{
+							featureFlags['show-instutites'] ? (
+								<>
+									at{' '}
+									<Link external href="https://www.northsouth.edu">
+										<strong> North South University </strong>
+									</Link>
+									, Dhaka, Bangladesh and got a <strong>Bachelor of Science</strong> degree.
+								</>
+							) : (
+								<>
+									at Dhaka, Bangladesh and got a <strong>Bachelor of Science</strong> degree.
+								</>
+							)
+						}
 					</p>
 				</div>
 			</section>
