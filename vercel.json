@@ -7,6 +7,10 @@
         { "key": "Access-Control-Allow-Origin", "value": "*" },
         { "key": "Cache-Control", "value": "public, max-age=3600" }
       ]
+    },
+    {
+      "source": "/.well-known/openpgpkey/:domain/policy",
+      "headers": [{ "key": "Content-Type", "value": "text/plain" }]
     }
   ]
 }
