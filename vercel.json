@@ -1,0 +1,8 @@
+{
+  "headers": [
+    {
+      "source": "/.well-known/openpgpkey/:domain/hu/:hash",
+      "headers": [{ "key": "Content-Type", "value": "application/octet-stream" }]
+    }
+  ]
+}
