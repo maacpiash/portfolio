@@ -1,6 +1,18 @@
 {
   "headers": [
     {
+      "source": "/.well-known/openpgpkey/hu/:hash",
+      "headers": [
+        { "key": "Content-Type", "value": "application/octet-stream" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Cache-Control", "value": "public, max-age=3600" }
+      ]
+    },
+    {
+      "source": "/.well-known/openpgpkey/policy",
+      "headers": [{ "key": "Content-Type", "value": "text/plain" }]
+    },
+    {
       "source": "/.well-known/openpgpkey/:domain/hu/:hash",
       "headers": [
         { "key": "Content-Type", "value": "application/octet-stream" },
