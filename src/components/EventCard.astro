@@ -1,0 +1,182 @@
+---
+import Link from './ui/link.astro'
+
+type Props = {
+	period: string
+	heading: string
+	subheading?: string
+	subheadingLink?: string
+	location?: string
+	tags?: string[]
+	tagsAriaLabel?: string
+	links?: Array<{ text: string; href: string }>
+	class?: string
+}
+
+const {
+	period,
+	heading,
+	subheading,
+	subheadingLink,
+	location,
+	tags = [],
+	tagsAriaLabel,
+	links = [],
+	class: className,
+} = Astro.props
+
+const hasSubheadingSlot = Astro.slots.has('subheading')
+const hasSummaryContent = Astro.slots.has('default')
+---
+
+<article class:list={['event-card', className]}>
+	<div class="event-head">
+		<p class="event-period">{period}</p>
+		<h3>{heading}</h3>
+		{
+			hasSubheadingSlot ? (
+				<p>
+					<slot name="subheading" />
+				</p>
+			) : (
+				subheading && (
+					<p>
+						{subheadingLink ? (
+							<Link external href={subheadingLink}>
+								<strong>{subheading}</strong>
+							</Link>
+						) : (
+							<strong>{subheading}</strong>
+						)}
+					</p>
+				)
+			)
+		}
+		{
+			location && (
+				<p>
+					<span class="event-meta-item">{location}</span>
+				</p>
+			)
+		}
+	</div>
+	{
+		hasSummaryContent && (
+			<p class="event-summary">
+				<slot />
+			</p>
+		)
+	}
+	{
+		tags.length > 0 && (
+			<div class="chips event-tags" role="list" aria-label={tagsAriaLabel}>
+				{tags.map((tag) => (
+					<span role="listitem">{tag}</span>
+				))}
+			</div>
+		)
+	}
+	{
+		links.length > 0 && (
+			<div class="event-links">
+				{links.map((link) => (
+					<Link external href={link.href}>
+						{link.text}
+					</Link>
+				))}
+			</div>
+		)
+	}
+</article>
+
+<style lang="scss">
+	.event-card {
+		display: grid;
+		gap: 0.9rem;
+		padding: 1rem;
+		border-radius: 0.9rem;
+		border: 1px solid color-mix(in srgb, var(--gray-300) 30%, transparent);
+		background: color-mix(in srgb, var(--gray-900) 50%, transparent);
+	}
+
+	.event-head {
+		display: grid;
+		gap: 0.3rem;
+
+		h3 {
+			margin: 0;
+			font-size: clamp(1.05rem, 0.95rem + 0.5vw, 1.25rem);
+			color: var(--gray-0);
+		}
+
+		p {
+			margin: 0;
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.5rem;
+			align-items: center;
+		}
+
+		span {
+			font-size: 0.92em;
+			opacity: 0.9;
+		}
+	}
+
+	.event-period {
+		margin: 0;
+		font-size: 0.85rem;
+		text-transform: uppercase;
+		letter-spacing: 0.07em;
+		color: var(--gray-100);
+	}
+
+	.event-summary {
+		margin: 0;
+		line-height: 1.65;
+	}
+
+	.event-tags {
+		gap: 0.45rem;
+
+		span {
+			font-size: 0.82rem;
+			padding: 0.3rem 0.62rem;
+		}
+	}
+
+	.event-links {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.45rem 0.7rem;
+		font-size: 0.93rem;
+	}
+
+	.event-meta-item {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.35rem;
+
+		svg {
+			flex-shrink: 0;
+			opacity: 0.9;
+		}
+	}
+
+	.chips {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.6rem;
+
+		span {
+			display: inline-flex;
+			align-items: center;
+			padding: 0.35rem 0.7rem;
+			border-radius: 999px;
+			border: 1px solid color-mix(in srgb, var(--gray-300) 36%, transparent);
+			background: color-mix(in srgb, var(--gray-900) 42%, transparent);
+			font-size: 0.9rem;
+			line-height: 1.2;
+		}
+	}
+</style>

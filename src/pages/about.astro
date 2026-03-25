@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 import Hero from '../components/Hero.astro'
 import Link from '../components/ui/link.astro'
 import Icon from '../components/ui/Icon.astro'
+import EventCard from '../components/EventCard.astro'
 
 const featureFlags = {
 	'show-instutites': import.meta.env.PUBLIC_SHOW_INSTUTITES === 'true',
@@ -20,37 +21,239 @@ const featureFlags = {
 			<section>
 				<h2 class="section-title">Background</h2>
 				<div class="content">
-					<p>
-						I am Ahad Chowdhury, originally from Dhaka 🇧🇩 — currently living in Sydney 🇦🇺 — working as a <strong
-							>Senior Software Engineer</strong
-						> for <Link external href="https://www.tcs.com">Tata Consultancy Services</Link>, contracted to
-						the <Link external href="https://www.commbank.com.au"
-							><strong>Commonwealth Bank of Australia</strong></Link
-						>.
+					<p class="lead">
+						I am <strong>Ahad Chowdhury</strong>, originally from Dhaka, Bangladesh, living in Sydney,
+						Australia. I am a software engineer with a passion for building impactful digital solutions and
+						a keen interest in data science and machine learning.
 					</p>
-					<p>At present, I am…</p>
-					<ul>
-						<li>
-							👨🏽‍💻 Working on
-							<Link external href="https://github.com/maacpiash/uds-dotnet-bun">
-								<code>uds-dotnet-bun</code></Link
-							>
+				</div>
+			</section>
+			<section>
+				<h3 class="section-title">Current Activities</h3>
+				<div class="content mini-grid" aria-label="What I am doing now">
+					<article class="mini-card">
+						<h3>Building</h3>
+						<p>
+							<Link external href="https://github.com/maacpiash/go-ahead"><code>go-ahead</code></Link>
 							and
-							<Link external href="https://github.com/maacpiash/minimal-api-jwt-auth">
-								<code>minimal-api-jwt-auth</code></Link
+							<Link external href="https://github.com/maacpiash/KonSchool"><code>KonSchool</code></Link>
+						</p>
+					</article>
+					<article class="mini-card">
+						<h3>Reading</h3>
+						<p>
+							<Link external href="https://www.goodreads.com/book/show/243585851"
+								>Visualizing Generative AI: How AI Paints, Writes, and Assists</Link
 							>
-							.
-						</li>
-						<li>
-							📖 Reading
-							<Link external href="https://www.goodreads.com/book/show/39312982-hello-world">
-								Hello World: How to be Human in the Age of the Machine by Hannah Fry</Link
-							>.
-						</li>
-						<li>💭 Learning about AWS, domain driven design, and vertical slices architecture.</li>
-					</ul>
+							by Priyanka Vergadia and Valliappa Lakshmanan
+						</p>
+					</article>
+					<article class="mini-card">
+						<h3>Learning</h3>
+						<p>AWS and Golang</p>
+					</article>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Work Experience</h2>
+				<div class="content work-grid">
+					<EventCard
+						period="Mar 2025 - Present"
+						heading="Senior Software Engineer"
+						subheading="Tata Consultancy Services"
+						subheadingLink="https://www.tcs.com"
+						location="Sydney, Australia"
+						tags={['React.js', 'Next.js', 'GraphQL', '.NET', 'Docker', 'Keycloak', 'AWS']}
+						tagsAriaLabel="TCS/CBA stack"
+					>
+						Contracted to the
+						<Link external href="https://www.commbank.com.au"
+							><strong>Commonwealth Bank of Australia</strong></Link
+						>, delivering full-stack enterprise solutions.
+					</EventCard>
+
+					<EventCard
+						period="Nov 2024 - Mar 2025"
+						heading="Software Engineer"
+						subheading="CORTO"
+						subheadingLink="https://docorto.ai"
+						location="Sydney, Australia"
+						tags={[
+							'ASP.NET Core',
+							'PostgreSQL',
+							'Entity Framework Core',
+							'AWS S3',
+							'AWS Lambda',
+							'AWS DynamoDB',
+						]}
+						tagsAriaLabel="CORTO stack"
+					>
+						Worked on the back-end projects of CORTO, a RAG-powered productivity solution for law
+						professionals.
+					</EventCard>
+
+					<EventCard
+						period="Apr 2021 - Jul 2022"
+						heading="Software Engineer"
+						subheading="Apollo International"
+						subheadingLink="https://www.apollointl.com.au"
+						location="Sydney, Australia"
+						tags={[
+							'Next.js',
+							'ASP.NET Core',
+							'PostgreSQL',
+							'Entity Framework Core',
+							'Redis',
+							'Nginx',
+							'IaaS',
+						]}
+						tagsAriaLabel="Apollo stack"
+					>
+						Developed a CRM platform for the company staff from scratch, including frontend, backend,
+						authentication, and data layer.
+					</EventCard>
+
+					<EventCard
+						period="Feb 2019 - Jan 2020"
+						heading="Junior Software Engineer"
+						subheading="Dynamic Solution Innovators Ltd."
+						subheadingLink="https://dsinnovators.com"
+						location="Dhaka, Bangladesh"
+						tags={[
+							'React.js',
+							'Redux.js',
+							'Node.js',
+							'Hapi.js',
+							'Formik',
+							'MongoDB',
+							'Docker Compose',
+							'GraphQL',
+							'Material UI',
+							'Electron.js',
+							'RethinkDB',
+							'AWS S3',
+						]}
+						tagsAriaLabel="DSI stack"
+						links={[
+							{
+								text: 'OpenCRVS case study',
+								href: 'https://www.dsinnovators.com/casestudies/open-crvs-2',
+							},
+							{ text: 'OpenCRVS details', href: 'https://www.dsinnovators.com/projects/open-crvs' },
+							{
+								text: 'My commits for OpenCRVS on GitHub',
+								href: 'https://github.com/opencrvs/opencrvs-core/commits?author=maacpiash',
+							},
+							{ text: 'Olwel case study', href: 'https://www.dsinnovators.com/casestudies/olwel-2' },
+							{ text: 'Olwel details', href: 'https://www.dsinnovators.com/projects/olwel' },
+						]}
+					>
+						Contributed to full-stack solutions of <Link external href="https://www.opencrvs.org"
+							>OpenCRVS</Link
+						> and
+						<Link external href="https://olwel.com">Olwel</Link>, building full-stack healthcare and civil
+						registration products.
+					</EventCard>
+
+					<EventCard
+						period="Nov 2016 - Apr 2018"
+						heading="Research Assistant"
+						subheading="Department of Environmental Science & Management, North South University"
+						subheadingLink="https://www.northsouth.edu/academic/shls/esm/"
+						location="Dhaka, Bangladesh"
+						tags={['.NET Framework (version 4.6)', 'Windows Forms']}
+						tagsAriaLabel="NODES stack"
+						links={[
+							{
+								text: 'Related news article',
+								href: 'http://www.ipsnews.net/2017/05/flying-green-in-bangladesh/',
+							},
+						]}
+					>
+						Worked on an aviation research project and built client software for <em>NODES</em>, an airline
+						management system.
+					</EventCard>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Education</h2>
+				<div class="content edu-grid">
+					<EventCard
+						period="Aug 2023 - Sep 2024"
+						heading="Master of Data Science"
+						location="Sydney, Australia"
+					>
+						<Fragment slot="subheading">
+							{
+								featureFlags['show-instutites'] ? (
+									<Link external href="https://spi.nsw.edu.au">
+										<strong>Sydney Polytechnic Institute</strong>
+									</Link>
+								) : (
+									<span />
+								)
+							}
+						</Fragment>
+						<p>
+							Capstone project: Investigation for Identification of the Most Effective Machine Learning
+							Method for Credit Card Fraud Detection.
+						</p>
+					</EventCard>
+
+					<EventCard
+						period="Jan 2014 - Aug 2018"
+						heading="Bachelor of Science in Computer Science and Engineering"
+						location="Dhaka, Bangladesh"
+					>
+						<Fragment slot="subheading">
+							{
+								featureFlags['show-instutites'] ? (
+									<Link external href="https://www.northsouth.edu">
+										<strong>North South University</strong>
+									</Link>
+								) : (
+									<span />
+								)
+							}
+						</Fragment>
+						<p>Capstone project: Fruit Image Classification Using Convolutional Neural Networks.</p>
+					</EventCard>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Skills</h2>
+				<div class="content">
+					<div class="chips" role="list" aria-label="Core skills">
+						<span role="listitem">C#</span>
+						<span role="listitem">JavaScript/TypeScript</span>
+						<span role="listitem">Python</span>
+						<span role="listitem">ASP.NET Core</span>
+						<span role="listitem">Node.js</span>
+						<span role="listitem">React.js</span>
+						<span role="listitem">SQL</span>
+						<span role="listitem">Docker</span>
+						<span role="listitem">TensorFlow/Keras</span>
+						<span role="listitem">PaaS</span>
+						<span role="listitem">IaaS</span>
+					</div>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Free/Libre OSS</h2>
+				<div class="content">
 					<p>
-						I also like to contribute to open source projects with code and documentation, such as
+						I am an avid enthusiast of free/libre open source software. I use GNU/Linux and Docker to run my
+						email server and cloud-based productivity solutions, powered by Stalwart and Nextcloud
+						respectively. I use Signal, VS Code, Neovim, Fish shell, Firefox, Thunderbird, and numerous
+						other free/libre applications on a daily basis.
+					</p>
+					<p>
+						This enthusiasm of mine is reflected on my tech-stack as well. Most of my development work
+						involves .NET, Node.js, React.js, Python, PostgreSQL, and Docker, all of which are free and open
+						source. All my personal projects are open source as well.
+					</p>
+					<p>
+						Furthermore, I contribute to open source with code and documentation, including
 						<Link external href="https://github.com/sandoche/Darkmode.js/pull/9">Darkmode.js</Link>,
 						<Link external href="https://github.com/ubuntu-mate/ubuntu-mate.org/pull/141"
 							>Ubuntu MATE docs</Link
@@ -58,148 +261,6 @@ const featureFlags = {
 						<Link external href="https://github.com/howtocode-dev/git.howtocode.dev/pull/21"
 							>git.howtocode.dev</Link
 						>.
-					</p>
-				</div>
-			</section>
-			<section>
-				<h2 class="section-title">Work Experience</h2>
-				<div class="content">
-					<p>
-						<strong>💼 Nov 2024 - Mar 2025</strong>: Worked full-time as a Software Engineer at <Link
-							external
-							href="https://docorto.ai"><strong>CORTO</strong></Link
-						>. Worked on the back-end projects of CORTO, a RAG-powered productivity solution for law
-						professionals. Worked with <Link external href="https://github.com/dotnet/aspnetcore"
-							>ASP.NET Core</Link
-						>, <Link external href="https://github.com/postgres/postgres">PostgreSQL</Link>, <Link
-							external
-							href="https://github.com/dotnet/efcore">Entity Framework Core</Link
-						>, and <Link external href="https://github.com/aws/aws-sdk-net">AWS</Link>.
-					</p>
-					<p>
-						<strong>🖥️ Apr 2021 - Jul 2022</strong>: Worked part-time as a <strong>Software Engineer</strong
-						> at <Link external href="https://www.apollointl.com.au"
-							><strong>Apollo International</strong></Link
-						>, Sydney, Australia. Developed a CRM software, to be used by the staff members of the company,
-						from scratch. Developed the frontend using <Link
-							external
-							href="https://github.com/vercel/next.js">Next.js</Link
-						>, backend (including a user authentication and authorization system) using <Link
-							external
-							href="https://github.com/dotnet/aspnetcore">ASP.NET Core</Link
-						>, with <Link external href="https://github.com/postgres/postgres">PostgreSQL</Link> as database (with
-						<Link external href="https://github.com/dotnet/efcore">Entity Framework Core</Link> as ORM) and <Link
-							external
-							href="https://github.com/redis/redis">Redis</Link
-						> for in-memory storage.
-					</p>
-					<p>
-						<strong>🏢 Feb 2019 - Jan 2020</strong>: Worked full-time as a <strong
-							>Junior Software Engineer</strong
-						> at <Link external href="https://dsinnovators.com"
-							><strong>Dynamic Solution Innovators Ltd.</strong></Link
-						>, Dhaka. Projects I worked on are <Link external href="https://www.opencrvs.org">OpenCRVS</Link
-						>, a solution for civil registration and vital statistics, backed by Plan International and the
-						government of Bangladesh (<Link
-							external
-							href="https://www.dsinnovators.com/casestudies/open-crvs-2">case study</Link
-						>, <Link external href="https://www.dsinnovators.com/projects/open-crvs">project details</Link>,
-						<Link external href="https://github.com/opencrvs/opencrvs-core/commits?author=maacpiash">
-							my commits
-						</Link>
-						) and the enterprise solution of
-						<Link external href="https://olwel.com">Olwel</Link>, a Finland-based healthcare startup
-						providing telemedicine and at-home medical care services in Bangladesh (<Link
-							external
-							href="https://www.dsinnovators.com/casestudies/olwel-2">case study</Link
-						>, <Link external href="https://www.dsinnovators.com/projects/olwel">project details</Link>).
-						<!-- </p>
-					<p> -->
-						Both are full-stack web applications developed using <Link
-							external
-							href="https://github.com/facebook/react">React</Link
-						>, <Link external href="https://github.com/reduxjs/redux">Redux</Link>, <Link
-							external
-							href="https://github.com/nodejs/node">Node</Link
-						>, and
-						<Link external href="https://github.com/hapijs/hapi">Hapi</Link>; in association with <Link
-							external
-							href="https://github.com/jaredpalmer/formik">Formik</Link
-						>, <Link external href="https://github.com/mongodb/mongo">MongoDB</Link>, <Link
-							external
-							href="https://github.com/docker/compose">Docker Compose</Link
-						>, and <Link external href="https://github.com/graphql/graphql-js">GraphQL</Link> for OpenCRVS and
-						<Link external href="https://github.com/mui/material-ui">Material UI</Link>, <Link
-							external
-							href="https://github.com/electron/electron">Electron</Link
-						>, <Link external href="https://github.com/rethinkdb/rethinkdb">RethinkDB</Link>, and <Link
-							external
-							href="https://github.com/aws/aws-sdk-js-v3">AWS S3</Link
-						> for Olwel.
-					</p>
-					<p>
-						<strong>💻 Nov 2016 - Apr 2018</strong>: Worked part-time as a <strong
-							>Research Assistant</strong
-						> at <Link external href="https://www.northsouth.edu/academic/shls/esm/"
-							><strong>DESM, North South University</strong></Link
-						>, Dhaka, Bangladesh, on a research project (<Link
-							external
-							href="http://www.ipsnews.net/2017/05/flying-green-in-bangladesh/"
-							>relevant news article</Link
-						>). Used <Link external href="https://github.com/dotnet/winforms">Windows Forms</Link> to develop
-						the client-side software of <em>NODES</em>, an airline management system.
-					</p>
-				</div>
-			</section>
-			<section>
-				<h2 class="section-title">Education</h2>
-				<div class="content">
-					<p>
-						<strong>📚 Aug 2023 - Sep 2024</strong>: Studied <strong> Data Science </strong>
-						{
-							featureFlags['show-instutites'] ? (
-								<>
-									at{' '}
-									<Link external href="https://spi.nsw.edu.au">
-										<strong>Sydney Polytechnic Institute</strong>
-									</Link>
-									, Sydney, Australia and got a <strong>Master of Data Science</strong> degree.
-								</>
-							) : (
-								<>
-									at Sydney, Australia and got a <strong>Master of Data Science</strong> degree.
-								</>
-							)
-						}
-					</p>
-					<p>
-						<strong>🎒 Jan 2014 - Aug 2018</strong>: Studied <strong>
-							Computer Science and Engineering
-						</strong>
-						{
-							featureFlags['show-instutites'] ? (
-								<>
-									at{' '}
-									<Link external href="https://www.northsouth.edu">
-										<strong> North South University </strong>
-									</Link>
-									, Dhaka, Bangladesh and got a <strong>Bachelor of Science</strong> degree.
-								</>
-							) : (
-								<>
-									at Dhaka, Bangladesh and got a <strong>Bachelor of Science</strong> degree.
-								</>
-							)
-						}
-					</p>
-				</div>
-			</section>
-			<section>
-				<h2 class="section-title">Skills</h2>
-				<div class="content">
-					<p>
-						C#, JavaScript/TypeScript, Python, ASP.NET Core, Node.js, React.js, SQL, Docker,
-						Keras/Tensorflow, PaaS, IaaS.
 					</p>
 				</div>
 			</section>
@@ -250,18 +311,96 @@ const featureFlags = {
 		grid-column-start: 1;
 		font-size: var(--text-xl);
 		color: var(--gray-0);
+		margin: 0;
+		padding-top: 0;
+		align-self: start;
+		line-height: 1.25;
 	}
 
 	.content {
 		grid-column: 2 / 4;
+		display: grid;
+		gap: 1rem;
+		align-self: start;
+
+		.lead {
+			font-size: clamp(1rem, 0.8rem + 0.8vw, 1.2rem);
+			line-height: 1.75;
+		}
 
 		p:not(:last-child) {
-			margin-bottom: 1rem;
+			margin-bottom: 0;
 		}
 
 		ul {
 			margin-bottom: 1rem;
 		}
+	}
+
+	.mini-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 0.8rem;
+	}
+
+	.mini-card {
+		padding: 0.9rem 1rem;
+		border-radius: 0.8rem;
+		border: 1px solid color-mix(in srgb, var(--gray-300) 28%, transparent);
+		background: color-mix(in srgb, var(--gray-900) 55%, transparent);
+
+		h3 {
+			font-size: 0.9rem;
+			text-transform: uppercase;
+			letter-spacing: 0.08em;
+			margin-bottom: 0.4rem;
+			color: var(--gray-100);
+		}
+
+		p {
+			margin: 0;
+			line-height: 1.6;
+		}
+	}
+
+	.work-grid {
+		gap: 1rem;
+	}
+
+	.edu-grid {
+		gap: 1rem;
+	}
+
+	.timeline {
+		gap: 0.9rem;
+
+		p {
+			padding: 0.9rem 1rem;
+			border-left: 2px solid color-mix(in srgb, var(--gray-300) 40%, transparent);
+			border-radius: 0.3rem;
+			background: color-mix(in srgb, var(--gray-900) 45%, transparent);
+		}
+	}
+
+	.chips {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.6rem;
+
+		span {
+			display: inline-flex;
+			align-items: center;
+			padding: 0.35rem 0.7rem;
+			border-radius: 999px;
+			border: 1px solid color-mix(in srgb, var(--gray-300) 36%, transparent);
+			background: color-mix(in srgb, var(--gray-900) 42%, transparent);
+			font-size: 0.9rem;
+			line-height: 1.2;
+		}
+	}
+
+	.address {
+		margin-top: 0.25rem;
 	}
 
 	@media (min-width: 50em) {
@@ -278,6 +417,14 @@ const featureFlags = {
 		section {
 			display: contents;
 			font-size: var(--text-lg);
+		}
+
+		.mini-grid {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+		}
+
+		.work-grid {
+			gap: 1.15rem;
 		}
 	}
 </style>
