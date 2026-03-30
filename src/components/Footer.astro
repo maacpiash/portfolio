@@ -39,6 +39,13 @@ import Link from './ui/link.astro'
 		color: var(--gray-400);
 	}
 
+	@media (max-width: 49.999em) {
+		footer {
+			/* Leave visual space above the fixed bottom nav bar */
+			padding-bottom: 6rem;
+		}
+	}
+
 	@media (min-width: 50em) {
 		footer {
 			flex-direction: row;
